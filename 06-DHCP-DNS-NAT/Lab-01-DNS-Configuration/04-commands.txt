@@ -1,0 +1,7 @@
+DNS Configuration
+
+DNS Server IP: 192.168.10.1
+Domain Name: ctracer
+Record Type: A
+Server IP Address: 192.168.10.1
+PC IP: 192.168.10.5
