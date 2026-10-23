@@ -1,4 +1,4 @@
-# Lab 00: Static Routing
+# Lab 01: Static Routing
 
 ## Objective
 To configure static routing between two different LANs using two routers in Cisco Packet Tracer.
