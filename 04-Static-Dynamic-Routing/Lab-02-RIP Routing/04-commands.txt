@@ -1,112 +1,41 @@
-# RIP Routing Commands
-## Lab: RIP Routing with 3 Routers, 3 Switches and 6 PCs
+RIP Routing Commands
+Lab: 3 Routers, 3 Switches and 6 PCs
 
-### 1. Router0 Configuration
-
-```bash
+Router0:
 enable
 configure terminal
-
-interface gigabitEthernet 0/0
-ip address 192.168.1.1 255.255.255.0
-no shutdown
-exit
-
-interface serial 0/0/0
-ip address 10.0.12.1 255.255.255.252
-no shutdown
-exit
-
 router rip
 version 2
 no auto-summary
 network 192.168.1.0
 network 10.0.12.0
-exit
-
 end
 write memory
-```
 
-### 2. Router1 Configuration
-
-```bash
+Router1:
 enable
 configure terminal
-
-interface gigabitEthernet 0/0
-ip address 192.168.2.1 255.255.255.0
-no shutdown
-exit
-
-interface serial 0/0/0
-ip address 10.0.12.2 255.255.255.252
-no shutdown
-exit
-
-interface serial 0/0/1
-ip address 10.0.23.1 255.255.255.252
-no shutdown
-exit
-
 router rip
 version 2
 no auto-summary
 network 192.168.2.0
 network 10.0.12.0
 network 10.0.23.0
-exit
-
 end
 write memory
-```
 
-### 3. Router2 Configuration
-
-```bash
+Router2:
 enable
 configure terminal
-
-interface gigabitEthernet 0/0
-ip address 192.168.3.1 255.255.255.0
-no shutdown
-exit
-
-interface serial 0/0/0
-ip address 10.0.23.2 255.255.255.252
-no shutdown
-exit
-
 router rip
 version 2
 no auto-summary
 network 192.168.3.0
 network 10.0.23.0
-exit
-
 end
 write memory
-```
 
-### 4. Verification Commands
-
-```bash
-show ip interface brief
-show ip protocols
+Verification Commands:
 show ip route
-show running-config
-```
-
-### 5. Connectivity Testing
-
-```bash
-ping 192.168.1.2
-ping 192.168.2.2
-ping 192.168.3.2
-```
-
-### Note
-- These commands use example IP addresses.
-- Interface names may differ depending on the router model.
-- If using serial DCE cables, configure a clock rate on the DCE side.
-- Configure the IP addresses and default gateways on all PCs separately.
+show ip protocols
+show ip interface brief
